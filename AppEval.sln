@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppEval", "AppEval\AppEval.csproj", "{4875F24B-C6B4-4082-8339-837BE3BE4DF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppEvalWindows", "AppEvalWindows\AppEvalWindows.csproj", "{0CC40110-F564-4328-8D23-C80EE95678FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4875F24B-C6B4-4082-8339-837BE3BE4DF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4875F24B-C6B4-4082-8339-837BE3BE4DF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4875F24B-C6B4-4082-8339-837BE3BE4DF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4875F24B-C6B4-4082-8339-837BE3BE4DF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CC40110-F564-4328-8D23-C80EE95678FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CC40110-F564-4328-8D23-C80EE95678FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CC40110-F564-4328-8D23-C80EE95678FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CC40110-F564-4328-8D23-C80EE95678FF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0772C7DD-4C97-43A9-ABAF-AC09B81D73BC}
+	EndGlobalSection
+EndGlobal
