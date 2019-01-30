@@ -117,7 +117,9 @@ namespace AppEvalWindows
         }
 
         private void comboBoxChoixOffre_SelectedIndexChanged(object sender, EventArgs e)
-        {         
+        {
+            using (var cmd = new NpgsqlCommand("SELECT titre FROM offre_emploi", conn))
+            using (var titre = cmd.ExecuteReader());
         }
     }
 }
