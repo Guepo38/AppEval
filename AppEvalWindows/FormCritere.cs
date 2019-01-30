@@ -59,12 +59,16 @@ namespace AppEvalWindows
             else
             {
                 e.Cancel = true;
-
             }
 
         }
 
         private void comboBoxOffre_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void FormCritere_Load(object sender, EventArgs e)
         {
             var connString = "Server=localhost;Username=postgres;Password=;Database=AppEval";
 
@@ -72,12 +76,34 @@ namespace AppEvalWindows
             {
                 conn.Open();
                 using (var cmd = new NpgsqlCommand("SELECT titre FROM offre_emploi", conn))
-                using (var titre = cmd.ExecuteReader()) 
+                using (var titre = cmd.ExecuteReader())
                     while (titre.Read())
                     {
-                        Console.WriteLine(titre.GetString(0));
+                        comboBoxOffre.Items.Add(titre.GetString(0));
                     }
-            }            
+
+                using (var cmd2 = new NpgsqlCommand("SELECT libellecritere FROM critere", conn))
+                using (var critere = cmd2.ExecuteReader())
+                    while (critere.Read())
+                    {
+                        string[] stateList = new string[50];
+
+                        for (int i = 1; i <= 50; i++)
+                        {
+                            stateList[i - 1] = critere.GetString(0);
+                        }
+
+                        for (int i = 0; i < stateList.Length; i++)
+                        {
+                            listBoxCritereEmploi.Items.Add(stateList[i].ToString());
+                        }
+                    }
+            }
+        }
+
+        private void listBoxCritereEmploi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Npgsql;
 
 namespace AppEvalWindows
 {
@@ -30,7 +31,18 @@ namespace AppEvalWindows
 
         private void Form2_Noter_Load(object sender, EventArgs e)
         {
+            var connString = "Server=localhost;Username=postgres;Password=;Database=AppEval";
 
+            using (var conn = new NpgsqlConnection(connString))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand("SELECT titre FROM offre_emploi", conn))
+                using (var titre = cmd.ExecuteReader())
+                    while (titre.Read())
+                    {
+                        comboBoxChoixOffre.Items.Add(titre.GetString(0));
+                    }
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -105,8 +117,7 @@ namespace AppEvalWindows
         }
 
         private void comboBoxChoixOffre_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+        {         
         }
     }
 }

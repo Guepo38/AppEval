@@ -91,10 +91,12 @@
             // 
             // comboBoxOffre
             // 
+            this.comboBoxOffre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxOffre.FormattingEnabled = true;
             this.comboBoxOffre.Location = new System.Drawing.Point(10, 53);
             this.comboBoxOffre.Name = "comboBoxOffre";
             this.comboBoxOffre.Size = new System.Drawing.Size(162, 23);
+            this.comboBoxOffre.Sorted = true;
             this.comboBoxOffre.TabIndex = 14;
             this.comboBoxOffre.SelectedIndexChanged += new System.EventHandler(this.comboBoxOffre_SelectedIndexChanged);
             // 
@@ -126,6 +128,7 @@
             this.listBoxCritereEmploi.Name = "listBoxCritereEmploi";
             this.listBoxCritereEmploi.Size = new System.Drawing.Size(203, 109);
             this.listBoxCritereEmploi.TabIndex = 5;
+            this.listBoxCritereEmploi.SelectedIndexChanged += new System.EventHandler(this.listBoxCritereEmploi_SelectedIndexChanged);
             // 
             // labelListOffresEmplois
             // 
@@ -146,6 +149,7 @@
             this.Name = "FormCritere";
             this.Text = "Formulaire d\'ajout des critères";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormCritere_FormClosed);
+            this.Load += new System.EventHandler(this.FormCritere_Load);
             this.groupBoxCritere.ResumeLayout(false);
             this.groupBoxCritere.PerformLayout();
             this.ResumeLayout(false);
@@ -162,7 +166,7 @@
         private System.Windows.Forms.ListBox listBoxCritereEmploi;
         private System.Windows.Forms.Label labelListOffresEmplois;
         private System.Windows.Forms.Button buttonAccueil;
-        private System.Windows.Forms.ComboBox comboBoxOffre;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.ComboBox comboBoxOffre;
     }
 }

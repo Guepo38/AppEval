@@ -41,9 +41,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.comboBoxChoixOffre = new System.Windows.Forms.ComboBox();
             this.labelOffre = new System.Windows.Forms.Label();
+            this.comboBoxChoixOffre = new System.Windows.Forms.ComboBox();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBoxMeilleurCandidature.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -202,6 +202,25 @@
             this.groupBox1.Text = "Liste des Offres";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // labelOffre
+            // 
+            this.labelOffre.AutoSize = true;
+            this.labelOffre.Location = new System.Drawing.Point(3, 105);
+            this.labelOffre.Name = "labelOffre";
+            this.labelOffre.Size = new System.Drawing.Size(149, 13);
+            this.labelOffre.TabIndex = 14;
+            this.labelOffre.Text = "Informations de l\'offre choisie :";
+            // 
+            // comboBoxChoixOffre
+            // 
+            this.comboBoxChoixOffre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxChoixOffre.FormattingEnabled = true;
+            this.comboBoxChoixOffre.Location = new System.Drawing.Point(6, 23);
+            this.comboBoxChoixOffre.Name = "comboBoxChoixOffre";
+            this.comboBoxChoixOffre.Size = new System.Drawing.Size(204, 21);
+            this.comboBoxChoixOffre.TabIndex = 13;
+            this.comboBoxChoixOffre.SelectedIndexChanged += new System.EventHandler(this.comboBoxChoixOffre_SelectedIndexChanged);
+            // 
             // dataGridView3
             // 
             this.dataGridView3.AllowUserToAddRows = false;
@@ -214,25 +233,6 @@
             this.dataGridView3.ReadOnly = true;
             this.dataGridView3.Size = new System.Drawing.Size(204, 37);
             this.dataGridView3.TabIndex = 12;
-            // 
-            // comboBoxChoixOffre
-            // 
-            this.comboBoxChoixOffre.FormattingEnabled = true;
-            this.comboBoxChoixOffre.Location = new System.Drawing.Point(6, 23);
-            this.comboBoxChoixOffre.Name = "comboBoxChoixOffre";
-            this.comboBoxChoixOffre.Size = new System.Drawing.Size(204, 21);
-            this.comboBoxChoixOffre.TabIndex = 13;
-            this.comboBoxChoixOffre.Text = "Veuillez selectionner une offre";
-            this.comboBoxChoixOffre.SelectedIndexChanged += new System.EventHandler(this.comboBoxChoixOffre_SelectedIndexChanged);
-            // 
-            // labelOffre
-            // 
-            this.labelOffre.AutoSize = true;
-            this.labelOffre.Location = new System.Drawing.Point(3, 105);
-            this.labelOffre.Name = "labelOffre";
-            this.labelOffre.Size = new System.Drawing.Size(149, 13);
-            this.labelOffre.TabIndex = 14;
-            this.labelOffre.Text = "Informations de l\'offre choisie :";
             // 
             // FormSuivi
             // 
