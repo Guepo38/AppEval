@@ -61,11 +61,13 @@
             // 
             // comboBoxOffre
             // 
+            this.comboBoxOffre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxOffre.FormattingEnabled = true;
             this.comboBoxOffre.Location = new System.Drawing.Point(9, 55);
             this.comboBoxOffre.Name = "comboBoxOffre";
             this.comboBoxOffre.Size = new System.Drawing.Size(191, 23);
             this.comboBoxOffre.TabIndex = 3;
+            this.comboBoxOffre.SelectedIndexChanged += new System.EventHandler(this.comboBoxOffre_SelectedIndexChanged);
             // 
             // labelOffre
             // 
@@ -149,6 +151,7 @@
             // 
             // comboBoxNotes
             // 
+            this.comboBoxNotes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxNotes.FormattingEnabled = true;
             this.comboBoxNotes.Items.AddRange(new object[] {
             "Choisir une note",
@@ -162,7 +165,6 @@
             this.comboBoxNotes.Name = "comboBoxNotes";
             this.comboBoxNotes.Size = new System.Drawing.Size(200, 23);
             this.comboBoxNotes.TabIndex = 16;
-            this.comboBoxNotes.Text = "Selectionner une note";
             this.comboBoxNotes.SelectedIndexChanged += new System.EventHandler(this.comboBoxNotes_SelectedIndexChanged);
             // 
             // FormNoter
@@ -174,6 +176,7 @@
             this.Controls.Add(this.groupBoxNoter);
             this.Name = "FormNoter";
             this.Text = "FormNoter";
+            this.Load += new System.EventHandler(this.FormNoter_Load_1);
             this.groupBoxNoter.ResumeLayout(false);
             this.groupBoxNoter.PerformLayout();
             this.groupBoxCritere.ResumeLayout(false);
