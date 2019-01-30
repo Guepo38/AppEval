@@ -9,6 +9,7 @@ namespace AppEval
     public class Critere
     {
         //Déclaration attributs
+        // clonage shainee
         private int idCrit;
         private string nomCrit;
         //Constructeur
