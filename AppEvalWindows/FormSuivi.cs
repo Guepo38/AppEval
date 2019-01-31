@@ -33,7 +33,8 @@ namespace AppEvalWindows
         {
             var connString = "Server=localhost;Username=postgres;Password=;Database=AppEval";
 
-            using (var conn = new NpgsqlConnection(connString))
+            using (var conn = new NpgsqlConnection(connString))*
+                    ///teste 
             {
                 conn.Open();
                 using (var cmd = new NpgsqlCommand("SELECT titre FROM offre_emploi", conn))
