@@ -16,6 +16,17 @@ VALUES("Chef de Projet");
 INSERT INTO OFFRE_EMPLOI(titre)
 VALUES("Développeur Web");
 
+-- Requête trouver dans BDD AppEval.sql --
+INSERT INTO OFFRE_EMPLOI
+VALUES(1, 'testOffre', '2018-09-09');
+
+-- RH --
+INSERT INTO RH(idRh, loginRh, password, statut)
+VALUES(1, "testDRH", "testDRH", 1);
+INSERT INTO RH(idRH, loginRh, password, statut)
+VALUES(2, "testRH", "testRH", 0);
+
+
 -- CANDIDATURE --
 INSERT INTO CANDIDATURE(nomCand, prenomCand, dateCand, statut, id_offre)
 VALUES("Mimi", "Jean", "2019-11-30", "Accepté", 1);

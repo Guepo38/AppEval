@@ -9,10 +9,6 @@ CREATE TABLE RH
     statut INT,
     CONSTRAINT pk_RH PRIMARY KEY(idRH)
 );
-INSERT INTO RH(idRh, loginRh, password, statut)
-VALUES(1, "testDRH", "testDRH", 1);
-INSERT INTO RH(idRH, loginRh, password, statut)
-VALUES(2, "testRH", "testRH", 0);
 
 
 CREATE TABLE OFFRE_EMPLOI
@@ -22,8 +18,7 @@ CREATE TABLE OFFRE_EMPLOI
   date_limite DATE,
   CONSTRAINT pk_offre_e PRIMARY KEY(idOffre)
 );
-INSERT INTO OFFRE_EMPLOI
-VALUES(1, 'testOffre', '2018-09-09');
+
 
 CREATE TABLE CRITERE
 (
