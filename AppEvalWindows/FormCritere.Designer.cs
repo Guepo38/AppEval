@@ -38,6 +38,8 @@
             this.listBoxCritereEmploi = new System.Windows.Forms.ListBox();
             this.labelListOffresEmplois = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.labelModifDate = new System.Windows.Forms.Label();
+            this.dateTimePickerDateLimite = new System.Windows.Forms.DateTimePicker();
             this.groupBoxCritere.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,6 +75,8 @@
             // groupBoxCritere
             // 
             this.groupBoxCritere.BackColor = System.Drawing.Color.DarkKhaki;
+            this.groupBoxCritere.Controls.Add(this.dateTimePickerDateLimite);
+            this.groupBoxCritere.Controls.Add(this.labelModifDate);
             this.groupBoxCritere.Controls.Add(this.comboBoxOffre);
             this.groupBoxCritere.Controls.Add(this.buttonAccueil);
             this.groupBoxCritere.Controls.Add(this.labelListCritere);
@@ -140,6 +144,27 @@
             this.labelListOffresEmplois.TabIndex = 4;
             this.labelListOffresEmplois.Text = "Les offres d\'emplois :";
             // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            // 
+            // labelModifDate
+            // 
+            this.labelModifDate.AutoSize = true;
+            this.labelModifDate.Location = new System.Drawing.Point(219, 35);
+            this.labelModifDate.Name = "labelModifDate";
+            this.labelModifDate.Size = new System.Drawing.Size(131, 15);
+            this.labelModifDate.TabIndex = 15;
+            this.labelModifDate.Text = "Modifier la date limite :";
+            this.labelModifDate.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // dateTimePickerDateLimite
+            // 
+            this.dateTimePickerDateLimite.Location = new System.Drawing.Point(222, 55);
+            this.dateTimePickerDateLimite.Name = "dateTimePickerDateLimite";
+            this.dateTimePickerDateLimite.Size = new System.Drawing.Size(128, 21);
+            this.dateTimePickerDateLimite.TabIndex = 16;
+            // 
             // FormCritere
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -168,5 +193,7 @@
         private System.Windows.Forms.Button buttonAccueil;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.ComboBox comboBoxOffre;
+        private System.Windows.Forms.Label labelModifDate;
+        private System.Windows.Forms.DateTimePicker dateTimePickerDateLimite;
     }
 }

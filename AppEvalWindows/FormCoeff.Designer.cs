@@ -51,6 +51,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "1",
@@ -86,6 +87,7 @@
             this.buttonAjoutCoeff.TabIndex = 2;
             this.buttonAjoutCoeff.Text = "Valider";
             this.buttonAjoutCoeff.UseVisualStyleBackColor = true;
+            this.buttonAjoutCoeff.Click += new System.EventHandler(this.buttonAjoutCoeff_Click);
             // 
             // FormCoeff
             // 

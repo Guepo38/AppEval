@@ -85,6 +85,7 @@
             this.groupBoxMeilleurCandidature.TabIndex = 3;
             this.groupBoxMeilleurCandidature.TabStop = false;
             this.groupBoxMeilleurCandidature.Text = "Les meilleures candidatures:";
+            this.groupBoxMeilleurCandidature.Enter += new System.EventHandler(this.groupBoxMeilleurCandidature_Enter);
             // 
             // buttonAccueil
             // 

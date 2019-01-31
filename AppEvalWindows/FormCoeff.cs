@@ -26,5 +26,11 @@ namespace AppEvalWindows
         {
 
         }
+
+        private void buttonAjoutCoeff_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            MessageBox.Show("Nouveau critère ajouté", "Critère ajouté");
+        }
     }
 }
