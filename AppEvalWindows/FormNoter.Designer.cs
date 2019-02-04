@@ -113,7 +113,6 @@
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(200, 94);
             this.listBox2.TabIndex = 14;
-            this.listBox2.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
             // 
             // labelChoixCritere
             // 

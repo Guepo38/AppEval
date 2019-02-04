@@ -12,22 +12,16 @@ namespace AppEval
         // clonage shainee
         private int idCrit;
         private string nomCrit;
-        private int coeff;
         //Constructeur
-        public Critere(int unIdCritere, string unNomCritere, int unCoeff)
+        public Critere(int unIdCritere, string unNomCritere)
         {
             this.idCrit = unIdCritere;
             this.nomCrit = unNomCritere;
-            this.coeff = unCoeff;
         }
         //Getteurs
         public string GetNomCritere()
         {
             return this.nomCrit;
-        }
-        public int GetCoeffCritere()
-        {
-            return this.coeff;
         }
     }
 }

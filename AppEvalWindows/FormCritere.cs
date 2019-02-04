@@ -31,6 +31,8 @@ namespace AppEvalWindows
             NpgsqlDataReader criteres = cmd.ExecuteReader();
             criteres.Close();
             conn.Close();
+            MessageBox.Show("Vous avez ajouté un nouveau critère");
+            textBoxAjout.Clear();
         }
 
         private void buttonAccueil_Click(object sender, EventArgs e)
@@ -72,11 +74,11 @@ namespace AppEvalWindows
             NpgsqlConnection conn = new NpgsqlConnection("Server=localhost;Username=postgres;Password=;Database=AppEval");
             conn.Open();
             NpgsqlCommand cmd = new NpgsqlCommand("SELECT * from CRITERE ", conn); //where idOffre = '" + comboBoxOffre.SelectedItem.ToString() + "'
-            NpgsqlDataReader criteres = cmd.ExecuteReader();         
+            NpgsqlDataReader criteres = cmd.ExecuteReader();
             while (criteres.Read())
             {
-                listBoxCritereEmploi.Items.Add(criteres.GetString(0));
-            }       
+                listBoxCritereEmploi.Items.Add(criteres.GetValue(0));
+            }
             criteres.Close();
             conn.Close();
         }
@@ -93,13 +95,13 @@ namespace AppEvalWindows
                     while (titre.Read())
                     {
                         comboBoxOffre.Items.Add(titre.GetString(0));
-                    }         
+                    }
             }
         }
 
         private void listBoxCritereEmploi_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void label1_Click(object sender, EventArgs e)
