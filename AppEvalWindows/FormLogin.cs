@@ -50,11 +50,6 @@ namespace AppEvalWindows
             conn.Close();
         }
 
-        private void textBoxLogin_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void FormLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
             string msg = "Voulez allez quitter l'application AppEval";

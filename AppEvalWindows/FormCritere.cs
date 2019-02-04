@@ -23,10 +23,14 @@ namespace AppEvalWindows
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonAjouter_Click(object sender, EventArgs e)
         {
-            FormCoeff f = new FormCoeff();
-            f.Show();
+            NpgsqlConnection conn = new NpgsqlConnection("Server=localhost;Username=postgres;Password=;Database=AppEval");
+            conn.Open();
+            NpgsqlCommand cmd = new NpgsqlCommand("INSERT INTO critere(libelleCritere, coeff, idOffre) VALUES('" + textBoxAjout.Text + "','" + comboBoxCoeff.SelectedItem.ToString() + "',1)", conn);
+            NpgsqlDataReader criteres = cmd.ExecuteReader();
+            criteres.Close();
+            conn.Close();
         }
 
         private void buttonAccueil_Click(object sender, EventArgs e)
@@ -65,7 +69,16 @@ namespace AppEvalWindows
 
         private void comboBoxOffre_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            NpgsqlConnection conn = new NpgsqlConnection("Server=localhost;Username=postgres;Password=;Database=AppEval");
+            conn.Open();
+            NpgsqlCommand cmd = new NpgsqlCommand("SELECT * from CRITERE ", conn); //where idOffre = '" + comboBoxOffre.SelectedItem.ToString() + "'
+            NpgsqlDataReader criteres = cmd.ExecuteReader();         
+            while (criteres.Read())
+            {
+                listBoxCritereEmploi.Items.Add(criteres.GetString(0));
+            }       
+            criteres.Close();
+            conn.Close();
         }
 
         private void FormCritere_Load(object sender, EventArgs e)
@@ -80,24 +93,7 @@ namespace AppEvalWindows
                     while (titre.Read())
                     {
                         comboBoxOffre.Items.Add(titre.GetString(0));
-                    }
-
-                using (var cmd2 = new NpgsqlCommand("SELECT libellecritere FROM critere", conn))
-                using (var critere = cmd2.ExecuteReader())
-                    while (critere.Read())
-                    {
-                        string[] stateList = new string[50];
-
-                        for (int i = 1; i <= 50; i++)
-                        {
-                            stateList[i - 1] = critere.GetString(0);
-                        }
-
-                        for (int i = 0; i < stateList.Length; i++)
-                        {
-                            listBoxCritereEmploi.Items.Add(stateList[i].ToString());
-                        }
-                    }
+                    }         
             }
         }
 
@@ -113,6 +109,13 @@ namespace AppEvalWindows
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
+
+        }
+
+        private void dateTimePickerDateLimite_ValueChanged(object sender, EventArgs e)
+        {
+            dateTimePickerDateLimite.MinDate = new DateTime(2019, 2, 1);
+            dateTimePickerDateLimite.MaxDate = new DateTime(2021, 2, 1);
 
         }
     }

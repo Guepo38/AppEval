@@ -32,49 +32,53 @@
             this.textBoxAjout = new System.Windows.Forms.TextBox();
             this.buttonAjouter = new System.Windows.Forms.Button();
             this.groupBoxCritere = new System.Windows.Forms.GroupBox();
+            this.comboBoxCoeff = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dateTimePickerDateLimite = new System.Windows.Forms.DateTimePicker();
+            this.labelModifDate = new System.Windows.Forms.Label();
             this.comboBoxOffre = new System.Windows.Forms.ComboBox();
             this.buttonAccueil = new System.Windows.Forms.Button();
             this.labelListCritere = new System.Windows.Forms.Label();
             this.listBoxCritereEmploi = new System.Windows.Forms.ListBox();
             this.labelListOffresEmplois = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.labelModifDate = new System.Windows.Forms.Label();
-            this.dateTimePickerDateLimite = new System.Windows.Forms.DateTimePicker();
             this.groupBoxCritere.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelAjout
             // 
             this.labelAjout.AutoSize = true;
-            this.labelAjout.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAjout.Location = new System.Drawing.Point(219, 113);
+            this.labelAjout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAjout.Location = new System.Drawing.Point(219, 107);
             this.labelAjout.Name = "labelAjout";
-            this.labelAjout.Size = new System.Drawing.Size(89, 13);
+            this.labelAjout.Size = new System.Drawing.Size(99, 15);
             this.labelAjout.TabIndex = 0;
             this.labelAjout.Text = "Nouveau critère :";
             this.labelAjout.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // textBoxAjout
             // 
-            this.textBoxAjout.Location = new System.Drawing.Point(314, 110);
+            this.textBoxAjout.Location = new System.Drawing.Point(321, 104);
             this.textBoxAjout.Name = "textBoxAjout";
-            this.textBoxAjout.Size = new System.Drawing.Size(92, 21);
+            this.textBoxAjout.Size = new System.Drawing.Size(90, 22);
             this.textBoxAjout.TabIndex = 1;
             this.textBoxAjout.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // buttonAjouter
             // 
-            this.buttonAjouter.Location = new System.Drawing.Point(314, 136);
+            this.buttonAjouter.Location = new System.Drawing.Point(321, 175);
             this.buttonAjouter.Name = "buttonAjouter";
-            this.buttonAjouter.Size = new System.Drawing.Size(92, 28);
+            this.buttonAjouter.Size = new System.Drawing.Size(90, 35);
             this.buttonAjouter.TabIndex = 2;
             this.buttonAjouter.Text = "Ajouter";
             this.buttonAjouter.UseVisualStyleBackColor = true;
-            this.buttonAjouter.Click += new System.EventHandler(this.button1_Click);
+            this.buttonAjouter.Click += new System.EventHandler(this.buttonAjouter_Click);
             // 
             // groupBoxCritere
             // 
             this.groupBoxCritere.BackColor = System.Drawing.Color.DarkKhaki;
+            this.groupBoxCritere.Controls.Add(this.comboBoxCoeff);
+            this.groupBoxCritere.Controls.Add(this.label1);
             this.groupBoxCritere.Controls.Add(this.dateTimePickerDateLimite);
             this.groupBoxCritere.Controls.Add(this.labelModifDate);
             this.groupBoxCritere.Controls.Add(this.comboBoxOffre);
@@ -85,13 +89,61 @@
             this.groupBoxCritere.Controls.Add(this.buttonAjouter);
             this.groupBoxCritere.Controls.Add(this.textBoxAjout);
             this.groupBoxCritere.Controls.Add(this.labelAjout);
-            this.groupBoxCritere.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxCritere.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxCritere.Location = new System.Drawing.Point(12, 12);
             this.groupBoxCritere.Name = "groupBoxCritere";
-            this.groupBoxCritere.Size = new System.Drawing.Size(437, 260);
+            this.groupBoxCritere.Size = new System.Drawing.Size(447, 231);
             this.groupBoxCritere.TabIndex = 3;
             this.groupBoxCritere.TabStop = false;
             this.groupBoxCritere.Text = "Ajout d\'un critère";
+            // 
+            // comboBoxCoeff
+            // 
+            this.comboBoxCoeff.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCoeff.FormattingEnabled = true;
+            this.comboBoxCoeff.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this.comboBoxCoeff.Location = new System.Drawing.Point(321, 132);
+            this.comboBoxCoeff.Name = "comboBoxCoeff";
+            this.comboBoxCoeff.Size = new System.Drawing.Size(90, 24);
+            this.comboBoxCoeff.TabIndex = 18;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(219, 135);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(76, 15);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Coefficient  : ";
+            // 
+            // dateTimePickerDateLimite
+            // 
+            this.dateTimePickerDateLimite.Location = new System.Drawing.Point(222, 55);
+            this.dateTimePickerDateLimite.Name = "dateTimePickerDateLimite";
+            this.dateTimePickerDateLimite.Size = new System.Drawing.Size(207, 22);
+            this.dateTimePickerDateLimite.TabIndex = 16;
+            this.dateTimePickerDateLimite.ValueChanged += new System.EventHandler(this.dateTimePickerDateLimite_ValueChanged);
+            // 
+            // labelModifDate
+            // 
+            this.labelModifDate.AutoSize = true;
+            this.labelModifDate.Location = new System.Drawing.Point(219, 35);
+            this.labelModifDate.Name = "labelModifDate";
+            this.labelModifDate.Size = new System.Drawing.Size(140, 16);
+            this.labelModifDate.TabIndex = 15;
+            this.labelModifDate.Text = "Modifier la date limite :";
+            this.labelModifDate.Click += new System.EventHandler(this.label1_Click);
             // 
             // comboBoxOffre
             // 
@@ -99,14 +151,14 @@
             this.comboBoxOffre.FormattingEnabled = true;
             this.comboBoxOffre.Location = new System.Drawing.Point(10, 53);
             this.comboBoxOffre.Name = "comboBoxOffre";
-            this.comboBoxOffre.Size = new System.Drawing.Size(162, 23);
+            this.comboBoxOffre.Size = new System.Drawing.Size(162, 24);
             this.comboBoxOffre.Sorted = true;
             this.comboBoxOffre.TabIndex = 14;
             this.comboBoxOffre.SelectedIndexChanged += new System.EventHandler(this.comboBoxOffre_SelectedIndexChanged);
             // 
             // buttonAccueil
             // 
-            this.buttonAccueil.Location = new System.Drawing.Point(314, 192);
+            this.buttonAccueil.Location = new System.Drawing.Point(222, 175);
             this.buttonAccueil.Name = "buttonAccueil";
             this.buttonAccueil.Size = new System.Drawing.Size(90, 35);
             this.buttonAccueil.TabIndex = 13;
@@ -127,10 +179,10 @@
             // listBoxCritereEmploi
             // 
             this.listBoxCritereEmploi.FormattingEnabled = true;
-            this.listBoxCritereEmploi.ItemHeight = 15;
+            this.listBoxCritereEmploi.ItemHeight = 16;
             this.listBoxCritereEmploi.Location = new System.Drawing.Point(10, 110);
             this.listBoxCritereEmploi.Name = "listBoxCritereEmploi";
-            this.listBoxCritereEmploi.Size = new System.Drawing.Size(203, 109);
+            this.listBoxCritereEmploi.Size = new System.Drawing.Size(203, 100);
             this.listBoxCritereEmploi.TabIndex = 5;
             this.listBoxCritereEmploi.SelectedIndexChanged += new System.EventHandler(this.listBoxCritereEmploi_SelectedIndexChanged);
             // 
@@ -148,28 +200,11 @@
             // 
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             // 
-            // labelModifDate
-            // 
-            this.labelModifDate.AutoSize = true;
-            this.labelModifDate.Location = new System.Drawing.Point(219, 35);
-            this.labelModifDate.Name = "labelModifDate";
-            this.labelModifDate.Size = new System.Drawing.Size(131, 15);
-            this.labelModifDate.TabIndex = 15;
-            this.labelModifDate.Text = "Modifier la date limite :";
-            this.labelModifDate.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // dateTimePickerDateLimite
-            // 
-            this.dateTimePickerDateLimite.Location = new System.Drawing.Point(222, 55);
-            this.dateTimePickerDateLimite.Name = "dateTimePickerDateLimite";
-            this.dateTimePickerDateLimite.Size = new System.Drawing.Size(128, 21);
-            this.dateTimePickerDateLimite.TabIndex = 16;
-            // 
             // FormCritere
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(461, 284);
+            this.ClientSize = new System.Drawing.Size(471, 255);
             this.Controls.Add(this.groupBoxCritere);
             this.Name = "FormCritere";
             this.Text = "Formulaire d\'ajout des critères";
@@ -195,5 +230,7 @@
         private System.Windows.Forms.ComboBox comboBoxOffre;
         private System.Windows.Forms.Label labelModifDate;
         private System.Windows.Forms.DateTimePicker dateTimePickerDateLimite;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBoxCoeff;
     }
 }
