@@ -33,8 +33,8 @@ namespace AppEvalWindows
         {
             var connString = "Server=localhost;Username=postgres;Password=;Database=AppEval";
 
-            using (var conn = new NpgsqlConnection(connString))*
-                    ///teste 
+            using (var conn = new NpgsqlConnection(connString))
+                  
             {
                 conn.Open();
                 using (var cmd = new NpgsqlCommand("SELECT titre FROM offre_emploi", conn))
@@ -119,6 +119,19 @@ namespace AppEvalWindows
 
         private void comboBoxChoixOffre_SelectedIndexChanged(object sender, EventArgs e)
         {
+            var connString = "Server=localhost;Username=postgres;Password=;Database=AppEval";
+
+            using (var conn = new NpgsqlConnection(connString))
+
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand("SELECT titre FROM OFFRE_EMPLOI;", conn))
+                using (var titre = cmd.ExecuteReader())
+                    while (titre.Read())
+                    {
+                        comboBoxChoixOffre.Items.Add(titre.GetString(0));
+                    }
+            }
         }
 
         private void groupBoxMeilleurCandidature_Enter(object sender, EventArgs e)
