@@ -16,6 +16,22 @@ namespace AppEvalWindows
         public FormSuivi()
         {
             InitializeComponent();
+            var db = "Server=localhost;Username=postgres;Password=;Database=AppEval";
+            using (var connexionDB = new NpgsqlConnection(db))
+            {
+                connexionDB.Open();
+
+                // Retrieve all rows
+                using (var Offre = new NpgsqlCommand("SELECT titre FROM OFFRE_EMPLOI", connexionDB))
+                using (var AfficheOffre = Offre.ExecuteReader())
+                    while (AfficheOffre.Read())
+                    {
+                        Console.WriteLine(AfficheOffre.GetString(0));
+                        comboBoxChoixOffre.Items.Add(AfficheOffre.GetString(0));
+                    }
+
+                comboBoxChoixOffre.SelectedIndex = 0;
+            }
         }
 
 
@@ -107,17 +123,7 @@ namespace AppEvalWindows
 
         private void comboBoxChoixOffre_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var db = "Server=localhost;Username=postgres;Password=;Database=AppEval";
-            using (var connexionDB = new NpgsqlConnection(db))
-            {
-                connexionDB.Open();
 
-                // Retrieve all rows
-                using (var Offre = new NpgsqlCommand("SELECT titre FROM OFFRE_EMPLOI", connexionDB))
-                using (var AfficheOffre = Offre.ExecuteReader())
-                    while (AfficheOffre.Read())
-                        Console.WriteLine(AfficheOffre.GetString(0));
-            }
     
         
         }
