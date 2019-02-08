@@ -31,19 +31,7 @@ namespace AppEvalWindows
 
         private void Form2_Noter_Load(object sender, EventArgs e)
         {
-            var connString = "Server=localhost;Username=postgres;Password=;Database=AppEval";
-
-            using (var conn = new NpgsqlConnection(connString))
-                  
-            {
-                conn.Open();
-                using (var cmd = new NpgsqlCommand("SELECT titre FROM offre_emploi", conn))
-                using (var titre = cmd.ExecuteReader())
-                    while (titre.Read())
-                    {
-                        comboBoxChoixOffre.Items.Add(titre.GetString(0));
-                    }
-            }
+          
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -119,19 +107,19 @@ namespace AppEvalWindows
 
         private void comboBoxChoixOffre_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var connString = "Server=localhost;Username=postgres;Password=;Database=AppEval";
-
-            using (var conn = new NpgsqlConnection(connString))
-
+            var db = "Server=localhost;Username=postgres;Password=;Database=AppEval";
+            using (var connexionDB = new NpgsqlConnection(db))
             {
-                conn.Open();
-                using (var cmd = new NpgsqlCommand("SELECT titre FROM OFFRE_EMPLOI;", conn))
-                using (var titre = cmd.ExecuteReader())
-                    while (titre.Read())
-                    {
-                        comboBoxChoixOffre.Items.Add(titre.GetString(0));
-                    }
+                connexionDB.Open();
+
+                // Retrieve all rows
+                using (var Offre = new NpgsqlCommand("SELECT titre FROM OFFRE_EMPLOI", connexionDB))
+                using (var AfficheOffre = Offre.ExecuteReader())
+                    while (AfficheOffre.Read())
+                        Console.WriteLine(AfficheOffre.GetString(0));
             }
+    
+        
         }
 
         private void groupBoxMeilleurCandidature_Enter(object sender, EventArgs e)
