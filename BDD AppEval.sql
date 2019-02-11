@@ -9,11 +9,6 @@ CREATE TABLE RH
     statut INT,
     CONSTRAINT pk_RH PRIMARY KEY(idRH)
 );
-INSERT INTO RH(idRh, loginRh, password, statut)
-VALUES(1, 'testDRH', 'testDRH', 1);
-INSERT INTO RH(idRH, loginRh, password, statut)
-VALUES(2, 'testRH', 'testRH', 0);
-
 
 CREATE TABLE OFFRE_EMPLOI
 (
@@ -22,24 +17,17 @@ CREATE TABLE OFFRE_EMPLOI
   date_limite DATE,
   CONSTRAINT pk_offre_e PRIMARY KEY(idOffre)
 );
-INSERT INTO OFFRE_EMPLOI
-VALUES('1', 'testOffre', '2018-09-09');
 
 CREATE TABLE CRITERE
 (
   idCritere SERIAL,
   libelleCritere VARCHAR(50),
-  coeff INT,
+  coeff INT NOT NULL,
   idOffre VARCHAR(5),
   CONSTRAINT pk_critere PRIMARY KEY(idCritere),
   CONSTRAINT fk_critere FOREIGN KEY(idOffre)
   REFERENCES OFFRE_EMPLOI(idOffre)
 );
-INSERT INTO CRITERE(libelleCritere, coeff, idOffre)
-VALUES('tenue', 5, 1);
-INSERT INTO CRITERE(libelleCritere, coeff, idOffre)
-VALUES('competences', 2, '1');
-
 
 CREATE TABLE CANDIDATURE
 (
