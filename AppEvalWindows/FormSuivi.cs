@@ -21,12 +21,11 @@ namespace AppEvalWindows
             {
                 connexionDB.Open();
 
-                // Retrieve all rows
+                // Afficher les offre emploi non candidatés
                 using (var Offre = new NpgsqlCommand("SELECT titre FROM OFFRE_EMPLOI", connexionDB))
                 using (var AfficheOffre = Offre.ExecuteReader())
                     while (AfficheOffre.Read())
                     {
-                        Console.WriteLine(AfficheOffre.GetString(0));
                         comboBoxChoixOffre.Items.Add(AfficheOffre.GetString(0));
                     }
 
@@ -124,11 +123,29 @@ namespace AppEvalWindows
         private void comboBoxChoixOffre_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-    
-        
+            var db = "Server=localhost;Username=postgres;Password=;Database=AppEval";
+            using (var connexionDB = new NpgsqlConnection(db))
+            {
+                connexionDB.Open();
+                /// CTRL + K + C commentaire CTRL K + U décommenté
+                /// Si on selectionne une Offre dans la combobox affiche dans dataGridView2 les candidatures CANDIDATÉ
+                //using (var offrecand = new npgsqlcommand("select * from candidature where idoffre = idoffre and statut != 'refusé' ", connexiondb))
+                //using (var afficheoffrecand = offrecand.executereader())
+                //    while (afficheoffrecand.read())
+                //    {
+                //        datagridview2.items.add(afficheoffrecand.getstring(0));
+                //    }
+
+            }
+
         }
 
         private void groupBoxMeilleurCandidature_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

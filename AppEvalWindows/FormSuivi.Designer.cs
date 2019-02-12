@@ -63,12 +63,13 @@
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 19);
+            this.dataGridView1.Location = new System.Drawing.Point(16, 23);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(694, 110);
+            this.dataGridView1.Size = new System.Drawing.Size(925, 135);
             this.dataGridView1.TabIndex = 0;
             // 
             // groupBoxMeilleurCandidature
@@ -79,9 +80,11 @@
             this.groupBoxMeilleurCandidature.Controls.Add(this.dataGridView1);
             this.groupBoxMeilleurCandidature.Controls.Add(this.labelMoyenneMeilleure);
             this.groupBoxMeilleurCandidature.Controls.Add(this.textBoxMoyenneMeilleure);
-            this.groupBoxMeilleurCandidature.Location = new System.Drawing.Point(12, 213);
+            this.groupBoxMeilleurCandidature.Location = new System.Drawing.Point(16, 262);
+            this.groupBoxMeilleurCandidature.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBoxMeilleurCandidature.Name = "groupBoxMeilleurCandidature";
-            this.groupBoxMeilleurCandidature.Size = new System.Drawing.Size(721, 176);
+            this.groupBoxMeilleurCandidature.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxMeilleurCandidature.Size = new System.Drawing.Size(961, 217);
             this.groupBoxMeilleurCandidature.TabIndex = 3;
             this.groupBoxMeilleurCandidature.TabStop = false;
             this.groupBoxMeilleurCandidature.Text = "Les meilleures candidatures:";
@@ -89,9 +92,10 @@
             // 
             // buttonAccueil
             // 
-            this.buttonAccueil.Location = new System.Drawing.Point(284, 135);
+            this.buttonAccueil.Location = new System.Drawing.Point(379, 166);
+            this.buttonAccueil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonAccueil.Name = "buttonAccueil";
-            this.buttonAccueil.Size = new System.Drawing.Size(90, 35);
+            this.buttonAccueil.Size = new System.Drawing.Size(120, 43);
             this.buttonAccueil.TabIndex = 12;
             this.buttonAccueil.Text = "Accueil";
             this.buttonAccueil.UseVisualStyleBackColor = true;
@@ -99,9 +103,10 @@
             // 
             // buttonQuitter
             // 
-            this.buttonQuitter.Location = new System.Drawing.Point(380, 135);
+            this.buttonQuitter.Location = new System.Drawing.Point(507, 166);
+            this.buttonQuitter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonQuitter.Name = "buttonQuitter";
-            this.buttonQuitter.Size = new System.Drawing.Size(90, 35);
+            this.buttonQuitter.Size = new System.Drawing.Size(120, 43);
             this.buttonQuitter.TabIndex = 11;
             this.buttonQuitter.Text = "Quitter";
             this.buttonQuitter.UseVisualStyleBackColor = true;
@@ -110,36 +115,40 @@
             // labelMoyenneMeilleure
             // 
             this.labelMoyenneMeilleure.AutoSize = true;
-            this.labelMoyenneMeilleure.Location = new System.Drawing.Point(9, 146);
+            this.labelMoyenneMeilleure.Location = new System.Drawing.Point(12, 180);
+            this.labelMoyenneMeilleure.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelMoyenneMeilleure.Name = "labelMoyenneMeilleure";
-            this.labelMoyenneMeilleure.Size = new System.Drawing.Size(152, 13);
+            this.labelMoyenneMeilleure.Size = new System.Drawing.Size(204, 17);
             this.labelMoyenneMeilleure.TabIndex = 4;
             this.labelMoyenneMeilleure.Text = "Moyenne des meilleures notes:";
             this.labelMoyenneMeilleure.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBoxMoyenneMeilleure
             // 
-            this.textBoxMoyenneMeilleure.Location = new System.Drawing.Point(169, 143);
+            this.textBoxMoyenneMeilleure.Location = new System.Drawing.Point(225, 176);
+            this.textBoxMoyenneMeilleure.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxMoyenneMeilleure.Name = "textBoxMoyenneMeilleure";
             this.textBoxMoyenneMeilleure.ReadOnly = true;
-            this.textBoxMoyenneMeilleure.Size = new System.Drawing.Size(90, 20);
+            this.textBoxMoyenneMeilleure.Size = new System.Drawing.Size(119, 22);
             this.textBoxMoyenneMeilleure.TabIndex = 5;
             this.textBoxMoyenneMeilleure.TextChanged += new System.EventHandler(this.textBoxMoyenne_TextChanged);
             // 
             // buttonAccepter
             // 
-            this.buttonAccepter.Location = new System.Drawing.Point(257, 148);
+            this.buttonAccepter.Location = new System.Drawing.Point(343, 182);
+            this.buttonAccepter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonAccepter.Name = "buttonAccepter";
-            this.buttonAccepter.Size = new System.Drawing.Size(75, 28);
+            this.buttonAccepter.Size = new System.Drawing.Size(100, 34);
             this.buttonAccepter.TabIndex = 7;
             this.buttonAccepter.Text = "Accepter";
             this.buttonAccepter.UseVisualStyleBackColor = true;
             // 
             // buttonRefuser
             // 
-            this.buttonRefuser.Location = new System.Drawing.Point(338, 148);
+            this.buttonRefuser.Location = new System.Drawing.Point(451, 182);
+            this.buttonRefuser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonRefuser.Name = "buttonRefuser";
-            this.buttonRefuser.Size = new System.Drawing.Size(75, 28);
+            this.buttonRefuser.Size = new System.Drawing.Size(100, 34);
             this.buttonRefuser.TabIndex = 8;
             this.buttonRefuser.Text = "Refuser";
             this.buttonRefuser.UseVisualStyleBackColor = true;
@@ -151,11 +160,13 @@
             this.dataGridView2.AllowUserToOrderColumns = true;
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(12, 23);
+            this.dataGridView2.Location = new System.Drawing.Point(16, 28);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(461, 116);
+            this.dataGridView2.Size = new System.Drawing.Size(615, 143);
             this.dataGridView2.TabIndex = 12;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // groupBoxListCandidat
             // 
@@ -165,9 +176,11 @@
             this.groupBoxListCandidat.Controls.Add(this.label1);
             this.groupBoxListCandidat.Controls.Add(this.textBox1);
             this.groupBoxListCandidat.Controls.Add(this.buttonAccepter);
-            this.groupBoxListCandidat.Location = new System.Drawing.Point(245, 12);
+            this.groupBoxListCandidat.Location = new System.Drawing.Point(327, 15);
+            this.groupBoxListCandidat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBoxListCandidat.Name = "groupBoxListCandidat";
-            this.groupBoxListCandidat.Size = new System.Drawing.Size(488, 195);
+            this.groupBoxListCandidat.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxListCandidat.Size = new System.Drawing.Size(651, 240);
             this.groupBoxListCandidat.TabIndex = 2;
             this.groupBoxListCandidat.TabStop = false;
             this.groupBoxListCandidat.Text = "Liste des candidatures:";
@@ -175,18 +188,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 156);
+            this.label1.Location = new System.Drawing.Point(12, 192);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 13);
+            this.label1.Size = new System.Drawing.Size(136, 17);
             this.label1.TabIndex = 4;
             this.label1.Text = "Moyenne des notes:";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(118, 153);
+            this.textBox1.Location = new System.Drawing.Point(157, 188);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(110, 20);
+            this.textBox1.Size = new System.Drawing.Size(145, 22);
             this.textBox1.TabIndex = 5;
             // 
             // groupBox1
@@ -195,9 +210,11 @@
             this.groupBox1.Controls.Add(this.labelOffre);
             this.groupBox1.Controls.Add(this.comboBoxChoixOffre);
             this.groupBox1.Controls.Add(this.dataGridView3);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(16, 15);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(227, 195);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(303, 240);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Liste des Offres";
@@ -206,9 +223,10 @@
             // labelOffre
             // 
             this.labelOffre.AutoSize = true;
-            this.labelOffre.Location = new System.Drawing.Point(3, 105);
+            this.labelOffre.Location = new System.Drawing.Point(4, 129);
+            this.labelOffre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelOffre.Name = "labelOffre";
-            this.labelOffre.Size = new System.Drawing.Size(149, 13);
+            this.labelOffre.Size = new System.Drawing.Size(200, 17);
             this.labelOffre.TabIndex = 14;
             this.labelOffre.Text = "Informations de l\'offre choisie :";
             // 
@@ -216,9 +234,10 @@
             // 
             this.comboBoxChoixOffre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxChoixOffre.FormattingEnabled = true;
-            this.comboBoxChoixOffre.Location = new System.Drawing.Point(6, 23);
+            this.comboBoxChoixOffre.Location = new System.Drawing.Point(8, 28);
+            this.comboBoxChoixOffre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBoxChoixOffre.Name = "comboBoxChoixOffre";
-            this.comboBoxChoixOffre.Size = new System.Drawing.Size(204, 21);
+            this.comboBoxChoixOffre.Size = new System.Drawing.Size(271, 24);
             this.comboBoxChoixOffre.TabIndex = 13;
             this.comboBoxChoixOffre.SelectedIndexChanged += new System.EventHandler(this.comboBoxChoixOffre_SelectedIndexChanged);
             // 
@@ -229,21 +248,23 @@
             this.dataGridView3.AllowUserToOrderColumns = true;
             this.dataGridView3.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(6, 132);
+            this.dataGridView3.Location = new System.Drawing.Point(8, 162);
+            this.dataGridView3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.Size = new System.Drawing.Size(204, 37);
+            this.dataGridView3.Size = new System.Drawing.Size(272, 46);
             this.dataGridView3.TabIndex = 12;
             // 
             // FormSuivi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(746, 400);
+            this.ClientSize = new System.Drawing.Size(995, 492);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBoxMeilleurCandidature);
             this.Controls.Add(this.groupBoxListCandidat);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormSuivi";
             this.Text = "eKara Suivi des Candidatures";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormSuivi_FormClosed);
