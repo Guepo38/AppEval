@@ -156,6 +156,7 @@
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.Size = new System.Drawing.Size(461, 116);
             this.dataGridView2.TabIndex = 12;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // groupBoxListCandidat
             // 
