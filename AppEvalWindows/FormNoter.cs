@@ -16,6 +16,21 @@ namespace AppEvalWindows
         public FormNoter()
         {
             InitializeComponent();
+            var db = "Server=localhost;Username=postgres;Password=;Database=AppEval";
+            using (var connexionDB = new NpgsqlConnection(db))
+            {
+                connexionDB.Open();
+
+                // Afficher les offre emploi
+                using (var Offre = new NpgsqlCommand("SELECT DISTINCT titre FROM OFFRE_EMPLOI", connexionDB))
+                using (var AfficheOffre = Offre.ExecuteReader())
+                    while (AfficheOffre.Read())
+                    {
+                        comboBoxOffre.Items.Add(AfficheOffre.GetString(0));
+                    }
+
+                comboBoxOffre.SelectedIndex = 0;
+            }
         }
 
         private void groupBoxNoter_Enter(object sender, EventArgs e)

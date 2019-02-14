@@ -35,7 +35,9 @@
   <ItemGroup>
     <Compile Include="Candidature.cs" />
     <Compile Include="Commentaires.cs" />
+    <Compile Include="ConnexionDB.cs" />
     <Compile Include="Critere.cs" />
+    <Compile Include="DAONoter.cs" />
     <Compile Include="Notes.cs" />
     <Compile Include="Offre.cs" />
     <Compile Include="Program.cs" />
