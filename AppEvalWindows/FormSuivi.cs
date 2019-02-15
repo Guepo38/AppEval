@@ -29,7 +29,6 @@ namespace AppEvalWindows
                         comboBoxChoixOffre.Items.Add(AfficheOffre.GetString(0));
                     }
 
-
                 comboBoxChoixOffre.SelectedIndex = 0;
             }
         }
