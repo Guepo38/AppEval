@@ -9,14 +9,10 @@ namespace AppEval
 {
     public class ConnexionDB
     {
-        public static NpgsqlConnection CoDB()
+        public static string CoDB()
         {
             string db = "Host=localhost;Username=postgres;Password=;Database=AppEval";
-
-            NpgsqlConnection connexionDB = new NpgsqlConnection(db);
-            connexionDB.Open();
-
-            return connexionDB;
+            return db;
         }
     }
 }

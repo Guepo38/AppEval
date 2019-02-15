@@ -11,10 +11,11 @@ namespace AppEval
     {
         public static string selectlibE(string lib)
         {
-            
-            { 
-                
-                using (var cmd = new NpgsqlCommand("SELECT idOffre FROM OFFRE_EMPLOI WHERE titre = '" + lib + "';", conn))
+            using (var connexionDB = new NpgsqlConnection(ConnexionDB.CoDB()))
+            {
+                connexionDB.Open();
+
+                    using (var cmd = new NpgsqlCommand("SELECT idOffre FROM OFFRE_EMPLOI WHERE titre = '" + lib + "';", conn))
                 using (var reader = cmd.ExecuteReader())
                     while (reader.Read())
                     {
