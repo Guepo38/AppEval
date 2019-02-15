@@ -16,7 +16,7 @@ namespace AppEvalWindows
         public FormSuivi()
         {
             InitializeComponent();
-            var db = "Server=localhost;Username=postgres;Password=;Database=AppEval";
+            var db = "Host=localhost;Username=postgres;Password=;Database=AppEval";
             using (var connexionDB = new NpgsqlConnection(db))
             {
                 connexionDB.Open();
@@ -28,6 +28,7 @@ namespace AppEvalWindows
                     {
                         comboBoxChoixOffre.Items.Add(AfficheOffre.GetString(0));
                     }
+
 
                 comboBoxChoixOffre.SelectedIndex = 0;
             }

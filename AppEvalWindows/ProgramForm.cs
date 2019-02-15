@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace AppEvalWindows
 {
-    static class Program
+    static class ProgramForm
     {
         /// <summary>
         /// Point d'entrée principal de l'application.
