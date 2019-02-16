@@ -16,7 +16,7 @@ namespace AppEvalWindows
         public FormSuivi()
         {
             InitializeComponent();
-            var db = "Host=localhost;Username=postgres;Password=;Database=AppEval";
+            var db = "Host=localhost;Username=postgres;Password=root;Database=AppEval";
             using (var connexionDB = new NpgsqlConnection(db))
             {
                 connexionDB.Open();
