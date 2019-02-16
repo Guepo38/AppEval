@@ -17,7 +17,7 @@ namespace AppEvalWindows
         public FormNoter()
         {
             InitializeComponent();
-            var db = "Server=localhost;Username=postgres;Password=;Database=AppEval";
+            var db = "Server=localhost;Username=postgres;Password=root;Database=AppEval";
             using (var connexionDB = new NpgsqlConnection(db))
             {
                 connexionDB.Open();
@@ -102,7 +102,7 @@ namespace AppEvalWindows
         private void comboBoxOffre_SelectedIndexChanged(object sender, EventArgs e)
         {
             string titre = comboBoxOffre.Text.ToString();
-            var db = "Server=localhost;Username=postgres;Password=;Database=AppEval";
+            var db = "Server=localhost;Username=postgres;Password=root;Database=AppEval";
             using (var connexionDB = new NpgsqlConnection(db))
             {
                 connexionDB.Open();
@@ -114,13 +114,12 @@ namespace AppEvalWindows
                     {
                         this.idOffre = AfficheOffre.GetString(0);
                     }
-
             }
         }
 
         private void FormNoter_Load_1(object sender, EventArgs e)
         {
-          
+
         }
     }
 }
