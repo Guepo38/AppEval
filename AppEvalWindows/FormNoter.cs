@@ -114,7 +114,6 @@ namespace AppEvalWindows
                     {
                         this.idOffre = AfficheOffre.GetString(0);
                     }
-
             }
         }
 
