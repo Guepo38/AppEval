@@ -13,9 +13,41 @@ namespace AppEvalWindows
 {
     public partial class FormNoter : Form
     {
+        string idOffre = "";
         public FormNoter()
         {
             InitializeComponent();
+            var db = "Server=localhost;Username=postgres;Password=;Database=AppEval";
+            using (var connexionDB = new NpgsqlConnection(db))
+            {
+                connexionDB.Open();
+
+                // Afficher les offre emploi
+                using (var Offre = new NpgsqlCommand("SELECT DISTINCT titre FROM OFFRE_EMPLOI", connexionDB))
+                using (var AfficheOffre = Offre.ExecuteReader())
+                    while (AfficheOffre.Read())
+                    {
+                        comboBoxOffre.Items.Add(AfficheOffre.GetString(0));
+                    }
+
+                comboBoxOffre.SelectedIndex = 0;
+            }
+
+            using (var connexionDB = new NpgsqlConnection(db))
+            {
+                connexionDB.Open();
+
+                // Afficher les offre emploi
+                using (var Offre = new NpgsqlCommand("SELECT DISTINCT nomcand FROM candidature WHERE idOffre = '" + this.idOffre + "'", connexionDB))
+                using (var AfficheOffre = Offre.ExecuteReader())
+                    while (AfficheOffre.Read())
+                    {
+                        comboBoxCandidatures.Items.Add(AfficheOffre.GetString(0));
+                    }
+
+                comboBoxCandidatures.SelectedIndex = 0;
+            }
+
         }
 
         private void groupBoxNoter_Enter(object sender, EventArgs e)
@@ -69,7 +101,21 @@ namespace AppEvalWindows
 
         private void comboBoxOffre_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            string titre = comboBoxOffre.Text.ToString();
+            var db = "Server=localhost;Username=postgres;Password=;Database=AppEval";
+            using (var connexionDB = new NpgsqlConnection(db))
+            {
+                connexionDB.Open();
+
+                // Afficher les offre emploi
+                using (var Offre = new NpgsqlCommand("SELECT DISTINCT idOffre FROM OFFRE_EMPLOI WHERE titre = '" + titre + "'", connexionDB))
+                using (var AfficheOffre = Offre.ExecuteReader())
+                    while (AfficheOffre.Read())
+                    {
+                        this.idOffre = AfficheOffre.GetString(0);
+                    }
+
+            }
         }
 
         private void FormNoter_Load_1(object sender, EventArgs e)
