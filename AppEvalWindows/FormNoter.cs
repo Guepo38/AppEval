@@ -22,7 +22,7 @@ namespace AppEvalWindows
             {
                 connexionDB.Open();
 
-                // Afficher les offre emploi
+                // Afficher les titres de offre emploi
                 using (var Offre = new NpgsqlCommand("SELECT DISTINCT titre FROM OFFRE_EMPLOI", connexionDB))
                 using (var AfficheOffre = Offre.ExecuteReader())
                     while (AfficheOffre.Read())
@@ -37,7 +37,7 @@ namespace AppEvalWindows
             {
                 connexionDB.Open();
 
-                // Afficher les offre emploi
+                // Afficher les offres emploi en fonction de idOffre
                 using (var Offre = new NpgsqlCommand("SELECT DISTINCT nomcand FROM candidature WHERE idOffre = '" + this.idOffre + "'", connexionDB))
                 using (var AfficheOffre = Offre.ExecuteReader())
                     while (AfficheOffre.Read())
@@ -114,10 +114,17 @@ namespace AppEvalWindows
                     {
                         this.idOffre = AfficheOffre.GetString(0);
                     }
+                
             }
+            
         }
 
         private void FormNoter_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxCandidatures_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

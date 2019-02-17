@@ -43,9 +43,58 @@ VALUES(2, 'testRH', 'testRH', 0);
 INSERT INTO CANDIDATURE(idCandidature, nomCand, prenomCand, dateCand, statut, idOffre)
 VALUES('1','Mimi', 'Jean', '2019-11-30', 'Accepté', 1);
 INSERT INTO CANDIDATURE(idCandidature, nomCand, prenomCand, dateCand, statut, idOffre)
-VALUES('2','Bobo', 'Dugenou', '2019-11-29', 'En Attente', 2);
+VALUES('2','Guy', 'Bedos', '2019-08-20', 'Accepté', 1);
 INSERT INTO CANDIDATURE(idCandidature, nomCand, prenomCand, dateCand, statut, idOffre)
-VALUES('3','Jojo', 'Leclerc', '2019-11-28', 'Refusé', 3);
+VALUES('3','Marc', 'Enrique', '2019-07-18', 'Accepté', 1);
+INSERT INTO CANDIDATURE(idCandidature, nomCand, prenomCand, dateCand, statut, idOffre)
+VALUES('4','Bobo', 'Dugenou', '2019-11-29', 'En Attente', 1);
+INSERT INTO CANDIDATURE(idCandidature, nomCand, prenomCand, dateCand, statut, idOffre)
+VALUES('5','Alain', 'Soupe', '2019-10-28', 'En Attente', 1);
+INSERT INTO CANDIDATURE(idCandidature, nomCand, prenomCand, dateCand, statut, idOffre)
+VALUES('6','Edgar', 'AlanPoe', '2019-09-27', 'En Attente', 1);
+INSERT INTO CANDIDATURE(idCandidature, nomCand, prenomCand, dateCand, statut, idOffre)
+VALUES('7','Jojo', 'Leclerc', '2019-11-28', 'Refusé', 1);
+INSERT INTO CANDIDATURE(idCandidature, nomCand, prenomCand, dateCand, statut, idOffre)
+VALUES('8','Boris', 'Meunier', '2019-11-01', 'Refusé', 1);
+INSERT INTO CANDIDATURE(idCandidature, nomCand, prenomCand, dateCand, statut, idOffre)
+VALUES('9','Joris', 'Fort', '2019-11-02', 'Refusé', 1);
+INSERT INTO CANDIDATURE(idCandidature, nomCand, prenomCand, dateCand, statut, idOffre)
+VALUES('10','Arthur', 'King', '2019-11-30', 'Accepté', 2);
+INSERT INTO CANDIDATURE(idCandidature, nomCand, prenomCand, dateCand, statut, idOffre)
+VALUES('11','Fatima', 'Afroid', '2019-08-20', 'Accepté', 2);
+INSERT INTO CANDIDATURE(idCandidature, nomCand, prenomCand, dateCand, statut, idOffre)
+VALUES('12','Loris', 'Enrique', '2019-07-18', 'Accepté', 2);
+INSERT INTO CANDIDATURE(idCandidature, nomCand, prenomCand, dateCand, statut, idOffre)
+VALUES('13','Bernard', 'Dugenou', '2019-11-29', 'En Attente', 2);
+INSERT INTO CANDIDATURE(idCandidature, nomCand, prenomCand, dateCand, statut, idOffre)
+VALUES('14','Ali', 'Soupe', '2019-10-28', 'En Attente', 2);
+INSERT INTO CANDIDATURE(idCandidature, nomCand, prenomCand, dateCand, statut, idOffre)
+VALUES('15','Edward', 'Elric', '2019-09-27', 'En Attente', 2);
+INSERT INTO CANDIDATURE(idCandidature, nomCand, prenomCand, dateCand, statut, idOffre)
+VALUES('16','Joel', 'Leclerc', '2019-11-28', 'Refusé', 2);
+INSERT INTO CANDIDATURE(idCandidature, nomCand, prenomCand, dateCand, statut, idOffre)
+VALUES('17','Anna', 'Meunier', '2019-11-01', 'Refusé', 2);
+INSERT INTO CANDIDATURE(idCandidature, nomCand, prenomCand, dateCand, statut, idOffre)
+VALUES('18','Laura', 'Fort', '2019-11-02', 'Refusé', 2);
+INSERT INTO CANDIDATURE(idCandidature, nomCand, prenomCand, dateCand, statut, idOffre)
+VALUES('19','Sophie', 'King', '2019-11-30', 'Accepté', 3);
+INSERT INTO CANDIDATURE(idCandidature, nomCand, prenomCand, dateCand, statut, idOffre)
+VALUES('20','Paula', 'Kennedy', '2019-08-20', 'Accepté', 3);
+INSERT INTO CANDIDATURE(idCandidature, nomCand, prenomCand, dateCand, statut, idOffre)
+VALUES('21','Léa', 'Mal', '2019-07-18', 'Accepté', 3);
+INSERT INTO CANDIDATURE(idCandidature, nomCand, prenomCand, dateCand, statut, idOffre)
+VALUES('22','Benjamin', 'Dugenou', '2019-11-29', 'En Attente', 3);
+INSERT INTO CANDIDATURE(idCandidature, nomCand, prenomCand, dateCand, statut, idOffre)
+VALUES('23','Alice', 'Soupe', '2019-10-28', 'En Attente', 3);
+INSERT INTO CANDIDATURE(idCandidature, nomCand, prenomCand, dateCand, statut, idOffre)
+VALUES('24','Sona', 'Elric', '2019-09-27', 'En Attente', 3);
+INSERT INTO CANDIDATURE(idCandidature, nomCand, prenomCand, dateCand, statut, idOffre)
+VALUES('25','Theresa', 'Leclerc', '2019-11-28', 'Refusé', 3);
+INSERT INTO CANDIDATURE(idCandidature, nomCand, prenomCand, dateCand, statut, idOffre)
+VALUES('26','Marie', 'Meunier', '2019-11-01', 'Refusé', 3);
+INSERT INTO CANDIDATURE(idCandidature, nomCand, prenomCand, dateCand, statut, idOffre)
+VALUES('27','Marine', 'Fort', '2019-11-02', 'Refusé', 3);
+
 
 -- EVALUATION --
 INSERT INTO EVALUATION(idEvaluation, nomRH, prenomRH, dateEval, BonusMalus, commentaire, idCandidature)

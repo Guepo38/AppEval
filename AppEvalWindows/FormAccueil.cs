@@ -24,21 +24,32 @@ namespace AppEvalWindows
 
         private void buttonConsulter_Click(object sender, EventArgs e)
         {                  
-            System.Threading.Thread monthread = new System.Threading.Thread(new System.Threading.ThreadStart(ouvrirnouveauform));
+            System.Threading.Thread monthread = new System.Threading.Thread(new System.Threading.ThreadStart(OpenCandidature));
             monthread.Start();
             this.Close();           
-             void ouvrirnouveauform()
+             void OpenCandidature()
             {
                 Application.Run(new FormSuivi());
             }
         }
 
-        private void buttonAjout_Click(object sender, EventArgs e)
+        private void buttonNoter_Click(object sender, EventArgs e)
         {
-            System.Threading.Thread monthread = new System.Threading.Thread(new System.Threading.ThreadStart(ouvrirnouveauform));
+            System.Threading.Thread monthread = new System.Threading.Thread(new System.Threading.ThreadStart(OpenNoterCand));
             monthread.Start();
             this.Close();
-            void ouvrirnouveauform()
+            void OpenNoterCand()
+            {
+                Application.Run(new FormNoter());
+            }
+        }
+
+        private void buttonAjout_Click(object sender, EventArgs e)
+        {
+            System.Threading.Thread monthread = new System.Threading.Thread(new System.Threading.ThreadStart(OpenAjoutCritere));
+            monthread.Start();
+            this.Close();
+            void OpenAjoutCritere()
             {
                 Application.Run(new FormCritere());
             }
@@ -49,15 +60,5 @@ namespace AppEvalWindows
 
         }
 
-        private void buttonNoter_Click(object sender, EventArgs e)
-        {
-            System.Threading.Thread monthread = new System.Threading.Thread(new System.Threading.ThreadStart(ouvrirnouveauform));
-            monthread.Start();
-            this.Close();
-            void ouvrirnouveauform()
-            {
-                Application.Run(new FormNoter());
-            }
-        }
     }
 }

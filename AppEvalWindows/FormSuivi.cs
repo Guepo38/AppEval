@@ -118,7 +118,12 @@ namespace AppEvalWindows
 
         private void buttonAccueil_Click(object sender, EventArgs e)
         {
-            this.Close();         
+            System.Threading.Thread monthread = new System.Threading.Thread(new System.Threading.ThreadStart(OpenFormAccueil));
+            this.Close();
+            void OpenFormAccueil()
+            {
+                Application.Run(new FormAccueil());
+            }
         }
 
         private void comboBoxChoixOffre_SelectedIndexChanged(object sender, EventArgs e)

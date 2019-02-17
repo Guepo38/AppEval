@@ -51,9 +51,11 @@
             this.groupBoxNoter.Controls.Add(this.comboBoxCandidatures);
             this.groupBoxNoter.Controls.Add(this.labelChoixNote);
             this.groupBoxNoter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxNoter.Location = new System.Drawing.Point(10, 5);
+            this.groupBoxNoter.Location = new System.Drawing.Point(13, 6);
+            this.groupBoxNoter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBoxNoter.Name = "groupBoxNoter";
-            this.groupBoxNoter.Size = new System.Drawing.Size(240, 228);
+            this.groupBoxNoter.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxNoter.Size = new System.Drawing.Size(320, 281);
             this.groupBoxNoter.TabIndex = 0;
             this.groupBoxNoter.TabStop = false;
             this.groupBoxNoter.Text = "Noter une candidature";
@@ -63,43 +65,49 @@
             // 
             this.comboBoxOffre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxOffre.FormattingEnabled = true;
-            this.comboBoxOffre.Location = new System.Drawing.Point(9, 55);
+            this.comboBoxOffre.Location = new System.Drawing.Point(12, 68);
+            this.comboBoxOffre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBoxOffre.Name = "comboBoxOffre";
-            this.comboBoxOffre.Size = new System.Drawing.Size(191, 23);
+            this.comboBoxOffre.Size = new System.Drawing.Size(253, 26);
             this.comboBoxOffre.TabIndex = 3;
             this.comboBoxOffre.SelectedIndexChanged += new System.EventHandler(this.comboBoxOffre_SelectedIndexChanged);
             // 
             // labelOffre
             // 
             this.labelOffre.AutoSize = true;
-            this.labelOffre.Location = new System.Drawing.Point(6, 27);
+            this.labelOffre.Location = new System.Drawing.Point(8, 33);
+            this.labelOffre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelOffre.Name = "labelOffre";
-            this.labelOffre.Size = new System.Drawing.Size(135, 15);
+            this.labelOffre.Size = new System.Drawing.Size(163, 18);
             this.labelOffre.TabIndex = 2;
             this.labelOffre.Text = "Selectionnez une offre :";
             // 
             // comboBoxCandidatures
             // 
             this.comboBoxCandidatures.FormattingEnabled = true;
-            this.comboBoxCandidatures.Location = new System.Drawing.Point(9, 155);
+            this.comboBoxCandidatures.Location = new System.Drawing.Point(12, 191);
+            this.comboBoxCandidatures.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBoxCandidatures.Name = "comboBoxCandidatures";
-            this.comboBoxCandidatures.Size = new System.Drawing.Size(191, 23);
+            this.comboBoxCandidatures.Size = new System.Drawing.Size(253, 26);
             this.comboBoxCandidatures.TabIndex = 1;
+            this.comboBoxCandidatures.SelectedIndexChanged += new System.EventHandler(this.comboBoxCandidatures_SelectedIndexChanged);
             // 
             // labelChoixNote
             // 
             this.labelChoixNote.AutoSize = true;
-            this.labelChoixNote.Location = new System.Drawing.Point(6, 134);
+            this.labelChoixNote.Location = new System.Drawing.Point(8, 165);
+            this.labelChoixNote.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelChoixNote.Name = "labelChoixNote";
-            this.labelChoixNote.Size = new System.Drawing.Size(194, 15);
+            this.labelChoixNote.Size = new System.Drawing.Size(235, 18);
             this.labelChoixNote.TabIndex = 0;
             this.labelChoixNote.Text = "Choisissez la candidature à noter :";
             // 
             // buttonAccueil
             // 
-            this.buttonAccueil.Location = new System.Drawing.Point(116, 184);
+            this.buttonAccueil.Location = new System.Drawing.Point(155, 226);
+            this.buttonAccueil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonAccueil.Name = "buttonAccueil";
-            this.buttonAccueil.Size = new System.Drawing.Size(90, 35);
+            this.buttonAccueil.Size = new System.Drawing.Size(120, 43);
             this.buttonAccueil.TabIndex = 13;
             this.buttonAccueil.Text = "Quitter";
             this.buttonAccueil.UseVisualStyleBackColor = true;
@@ -108,18 +116,20 @@
             // listBox2
             // 
             this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 15;
-            this.listBox2.Location = new System.Drawing.Point(6, 55);
+            this.listBox2.ItemHeight = 18;
+            this.listBox2.Location = new System.Drawing.Point(8, 68);
+            this.listBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(200, 94);
+            this.listBox2.Size = new System.Drawing.Size(265, 112);
             this.listBox2.TabIndex = 14;
             // 
             // labelChoixCritere
             // 
             this.labelChoixCritere.AutoSize = true;
-            this.labelChoixCritere.Location = new System.Drawing.Point(3, 27);
+            this.labelChoixCritere.Location = new System.Drawing.Point(4, 33);
+            this.labelChoixCritere.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelChoixCritere.Name = "labelChoixCritere";
-            this.labelChoixCritere.Size = new System.Drawing.Size(163, 15);
+            this.labelChoixCritere.Size = new System.Drawing.Size(200, 18);
             this.labelChoixCritere.TabIndex = 15;
             this.labelChoixCritere.Text = "Choisissez le critère à noter :";
             // 
@@ -132,18 +142,21 @@
             this.groupBoxCritere.Controls.Add(this.listBox2);
             this.groupBoxCritere.Controls.Add(this.buttonAccueil);
             this.groupBoxCritere.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxCritere.Location = new System.Drawing.Point(256, 5);
+            this.groupBoxCritere.Location = new System.Drawing.Point(341, 6);
+            this.groupBoxCritere.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBoxCritere.Name = "groupBoxCritere";
-            this.groupBoxCritere.Size = new System.Drawing.Size(240, 228);
+            this.groupBoxCritere.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxCritere.Size = new System.Drawing.Size(320, 281);
             this.groupBoxCritere.TabIndex = 16;
             this.groupBoxCritere.TabStop = false;
             this.groupBoxCritere.Text = "Les critères";
             // 
             // buttonNoter
             // 
-            this.buttonNoter.Location = new System.Drawing.Point(6, 184);
+            this.buttonNoter.Location = new System.Drawing.Point(8, 226);
+            this.buttonNoter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonNoter.Name = "buttonNoter";
-            this.buttonNoter.Size = new System.Drawing.Size(90, 35);
+            this.buttonNoter.Size = new System.Drawing.Size(120, 43);
             this.buttonNoter.TabIndex = 18;
             this.buttonNoter.Text = "Noter";
             this.buttonNoter.UseVisualStyleBackColor = true;
@@ -161,19 +174,21 @@
             "3",
             "4",
             "5"});
-            this.comboBoxNotes.Location = new System.Drawing.Point(6, 155);
+            this.comboBoxNotes.Location = new System.Drawing.Point(8, 191);
+            this.comboBoxNotes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBoxNotes.Name = "comboBoxNotes";
-            this.comboBoxNotes.Size = new System.Drawing.Size(200, 23);
+            this.comboBoxNotes.Size = new System.Drawing.Size(265, 26);
             this.comboBoxNotes.TabIndex = 16;
             this.comboBoxNotes.SelectedIndexChanged += new System.EventHandler(this.comboBoxNotes_SelectedIndexChanged);
             // 
             // FormNoter
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(513, 248);
+            this.ClientSize = new System.Drawing.Size(684, 305);
             this.Controls.Add(this.groupBoxCritere);
             this.Controls.Add(this.groupBoxNoter);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormNoter";
             this.Text = "FormNoter";
             this.Load += new System.EventHandler(this.FormNoter_Load_1);
