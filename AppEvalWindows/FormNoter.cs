@@ -13,16 +13,21 @@ namespace AppEvalWindows
 {
     public partial class FormNoter : Form
     {
+        // idOffre de l'offre selectionné
         string idOffre = "";
+
         public FormNoter()
         {
+
             InitializeComponent();
-            var db = "Server=localhost;Username=postgres;Password=root;Database=AppEval";
+
+            var db = "Host=localhost;Username=postgres;Password=root;Database=AppEval";
+            
             using (var connexionDB = new NpgsqlConnection(db))
             {
                 connexionDB.Open();
 
-                // Afficher les titres de offre emploi
+                // Afficher les titre de OFFRE EMPLOI
                 using (var Offre = new NpgsqlCommand("SELECT DISTINCT titre FROM OFFRE_EMPLOI", connexionDB))
                 using (var AfficheOffre = Offre.ExecuteReader())
                     while (AfficheOffre.Read())
@@ -32,17 +37,35 @@ namespace AppEvalWindows
 
                 comboBoxOffre.SelectedIndex = 0;
             }
-
-            using (var connexionDB = new NpgsqlConnection(db))
+      
+            using (var connexiondb = new NpgsqlConnection(db))
             {
-                connexionDB.Open();
+                connexiondb.Open();
 
-                // Afficher les offres emploi en fonction de idOffre
-                using (var Offre = new NpgsqlCommand("SELECT DISTINCT nomcand FROM candidature WHERE idOffre = '" + this.idOffre + "'", connexionDB))
-                using (var AfficheOffre = Offre.ExecuteReader())
-                    while (AfficheOffre.Read())
+                // Afficher les nomCand ayant fait une CANDIDTAURE en fonction de idOffre
+                using (var Candidat = new NpgsqlCommand("SELECT DISTINCT nomCand FROM CANDIDATURE WHERE idOffre = '" + this.idOffre + "' AND statut = 'En Attente'", connexiondb))
+                using (var AfficheCand = Candidat.ExecuteReader())
+                    while (AfficheCand.Read())
                     {
-                        comboBoxCandidatures.Items.Add(AfficheOffre.GetString(0));
+                        //ajoute les nomcand dans la comboboxcand en precisant son type string
+                        comboBoxCandidatures.Items.Add(AfficheCand.GetString(0));
+                        
+                    }
+
+                comboBoxCandidatures.SelectedIndex = 0;
+            }
+
+            using (var connexiondb = new NpgsqlConnection(db))
+            {
+                connexiondb.Open();
+
+                // Afficher les nomcand ayant fait une candidature en fonction de idoffre
+                using (var Critere = new NpgsqlCommand("SELECT libelleCritere FROM CRITERE", connexiondb))
+                using (var AfficheCrit = Critere.ExecuteReader())
+                    while (AfficheCrit.Read())
+                    {
+                        //ajoute les nomcand dans la comboboxcand en precisant son type string
+                        listBox_Criteres.Items.Add(AfficheCrit.GetString(0));
                     }
 
                 comboBoxCandidatures.SelectedIndex = 0;
@@ -94,37 +117,67 @@ namespace AppEvalWindows
             else
             {
                 e.Cancel = true;
-
             }
 
         }
 
         private void comboBoxOffre_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Permet de prendre idOffre du titre de l'offre selectionné
             string titre = comboBoxOffre.Text.ToString();
-            var db = "Server=localhost;Username=postgres;Password=root;Database=AppEval";
+
+            var db = "Host=localhost;Username=postgres;Password=root;Database=AppEval";
             using (var connexionDB = new NpgsqlConnection(db))
             {
                 connexionDB.Open();
 
-                // Afficher les offre emploi
-                using (var Offre = new NpgsqlCommand("SELECT DISTINCT idOffre FROM OFFRE_EMPLOI WHERE titre = '" + titre + "'", connexionDB))
-                using (var AfficheOffre = Offre.ExecuteReader())
-                    while (AfficheOffre.Read())
-                    {
-                        this.idOffre = AfficheOffre.GetString(0);
-                    }
                 
+                using (var idOffre = new NpgsqlCommand("SELECT DISTINCT idOffre FROM OFFRE_EMPLOI WHERE titre = '" + titre + "'", connexionDB))
+                using (var SelectId = idOffre.ExecuteReader())
+                    while (SelectId.Read())
+                    {
+                        this.idOffre = SelectId.GetString(0);
+                    }
+
             }
             
+            //On clear les valeurs et on relance la requête
+            // besoin de refaire fusinné les forms avec les class
+            comboBoxCandidatures.Items.Clear();
+            using (var connexiondb = new NpgsqlConnection(db))
+            {
+                connexiondb.Open();
+
+                // Afficher les nomcand ayant fait une candidature en fonction de idoffre
+                using (var Candidat = new NpgsqlCommand("SELECT DISTINCT nomCand FROM CANDIDATURE WHERE idOffre = '" + this.idOffre + "' AND statut = 'En Attente'", connexiondb))
+                using (var AfficheCand = Candidat.ExecuteReader())
+                    while (AfficheCand.Read())
+                    {
+                        //ajoute les nomcand dans la comboboxcand en precisant son type string
+                        comboBoxCandidatures.Items.Add(AfficheCand.GetString(0));
+
+                    }
+
+                comboBoxCandidatures.SelectedIndex = 0;
+            }
+
+
+            // Quand on select une Offre sa prend son id et change les valeurs de Candidatures et relance la requete
+            // ou refresh la comboBox Candidatures pour afficher les bonne personnes
+
         }
 
         private void FormNoter_Load_1(object sender, EventArgs e)
         {
-
+            
         }
 
         private void comboBoxCandidatures_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

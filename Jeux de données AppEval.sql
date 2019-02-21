@@ -14,8 +14,9 @@ INSERT INTO CRITERE(libelleCritere, coeff, idOffre)
 VALUES('Expérience', 5, '3');
 INSERT INTO CRITERE(libelleCritere, coeff, idOffre)
 VALUES('Disponibilité', 1, '1');
+/* le E avant la chaine permet d'échappé avec un \ une apostrophe, synthaxe popre à PostgreSQL */
 INSERT INTO CRITERE(libelleCritere, coeff, idOffre)
-VALUES('Formation ou détention d  diplôme', 10, '2');
+VALUES(E'Formation ou détention d\'un diplôme', 10, '2');
 
 -- Requête trouver dans BDD AppEval.sql --
 INSERT INTO CRITERE(libelleCritere, coeff, idOffre)

@@ -71,7 +71,7 @@ namespace AppEvalWindows
 
         private void comboBoxOffre_SelectedIndexChanged(object sender, EventArgs e)
         {
-            NpgsqlConnection conn = new NpgsqlConnection("Server=localhost;Username=postgres;Password=;Database=AppEval");
+            NpgsqlConnection conn = new NpgsqlConnection("Server=localhost;Username=postgres;Password=root;Database=AppEval");
             conn.Open();
             NpgsqlCommand cmd = new NpgsqlCommand("SELECT * from CRITERE ", conn); //where idOffre = '" + comboBoxOffre.SelectedItem.ToString() + "'
             NpgsqlDataReader criteres = cmd.ExecuteReader();
@@ -85,7 +85,7 @@ namespace AppEvalWindows
 
         private void FormCritere_Load(object sender, EventArgs e)
         {
-            var connString = "Server=localhost;Username=postgres;Password=;Database=AppEval";
+            var connString = "Server=localhost;Username=postgres;Password=root;Database=AppEval";
 
             using (var conn = new NpgsqlConnection(connString))
             {
